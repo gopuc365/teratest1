@@ -8,7 +8,11 @@ pipeline {
 
 //           }
 //         }
-        
+        stage ('Get Directory') {
+            steps {
+                println(WORKSPACE)
+            }
+        }
         stage ("terraform init") {
             steps {
                 sh ('terraform init') 
