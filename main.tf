@@ -9,6 +9,7 @@ resource "aws_vpc" "lifebit_vpc" {
 }
 
 
+//**
 resource "aws_subnet" "lifebit_subnet" {
   vpc_id            	= aws_vpc.lifebit_vpc.id
   cidr_block        	= "${cidrsubnet(aws_vpc.lifebit_vpc.cidr_block, 3, 1)}"
@@ -152,4 +153,4 @@ resource "aws_route_table_association" "lifebit_RTB_AS" {
   subnet_id 		= "${aws_subnet.lifebit_subnet.id}"
   route_table_id	= "${aws_route_table.lifebit_RTB.id}"
 
-   }
+   } **//
