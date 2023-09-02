@@ -25,11 +25,10 @@ SECRET_KEY = credentials('AWS_SECRET_ACCESS_KEY')
         stage ("terraform Action") {
             steps {
                 // withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'awscred', secretKeyVariable:'AWS_SECRET_ACCESS_KEY')]) 
-                {
+               // {
                 echo "Terraform action is --> ${action}"
                 sh ('terraform ${action} --auto-approve') 
            }
         }
     }
-}
 }
